@@ -1,26 +1,27 @@
-import { IsNotEmpty, IsOptional, IsString, IsDate } from 'class-validator';
+import { PartialType } from '@nestjs/mapped-types';
+import { CreateBookingDto } from './create-booking.dto';
 
-export class UpdateBookingDto {
-    @IsOptional()
-    @IsString()
-    @IsNotEmpty()
-    readonly userId?: string;  // ID ของผู้ใช้ที่ทำการจอง
+export class UpdateBookingDto extends PartialType(CreateBookingDto) { }
 
-    @IsOptional()
-    @IsString()
-    @IsNotEmpty()
-    readonly roomId?: string;  // ID ของห้องที่ทำการจอง
+// @IsOptional()
+// @IsString()
+// @IsNotEmpty()
+// readonly user_id?: string;  // ID ของผู้ใช้ที่ทำการจอง
 
-    @IsOptional()
-    @IsDate()
-    readonly startDate?: Date;  // วันที่เริ่มต้นการจอง
+// @IsOptional()
+// @IsString()
+// @IsNotEmpty()
+// readonly room_id?: string;  // ID ของห้องที่ทำการจอง
 
-    @IsOptional()
-    @IsDate()
-    readonly endDate?: Date;  // วันที่สิ้นสุดการจอง
+// @IsOptional()
+// @IsDate()
+// readonly ?: Date;  // วันที่เริ่มต้นการจอง
 
-    @IsOptional()
-    @IsString()
-    @IsNotEmpty()
-    readonly status?: string;  // สถานะการจอง เช่น "confirmed", "canceled", "pending"
-}
+// @IsOptional()
+// @IsDate()
+// readonly endDate?: Date;  // วันที่สิ้นสุดการจอง
+
+// @IsOptional()
+// @IsString()
+// @IsNotEmpty()
+// readonly status?: string;  // สถานะการจอง เช่น "confirmed", "canceled", "pending"

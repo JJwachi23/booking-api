@@ -1,27 +1,23 @@
-import { IsNotEmpty, IsString, IsDateString, IsOptional } from 'class-validator';
+import { IsNotEmpty, IsString, IsDate, IsOptional } from 'class-validator';
 
 export class CreateBookingDto {
-    @IsNotEmpty()
-    @IsString()
-    booking_id: string;
+    // @IsNotEmpty()
+    // @IsString()
+    // readonly userId: string;  // ID ของผู้ใช้ที่ทำการจอง
 
-    @IsNotEmpty()
-    @IsString()
-    user_id: string;
+    // @IsNotEmpty()
+    // @IsString()
+    // readonly roomId: string;  // ID ของห้องที่ทำการจอง
 
-    @IsNotEmpty()
-    @IsString()
-    room_id: string;
+    // @IsNotEmpty()
+    // @IsDate()
+    // readonly startDate: Date;  // วันที่เริ่มต้นการจอง
 
-    @IsNotEmpty()
-    @IsDateString()
-    datetime_start: string;
+    // @IsNotEmpty()
+    // @IsDate()
+    // readonly endDate: Date;  // วันที่สิ้นสุดการจอง
 
-    @IsNotEmpty()
-    @IsDateString()
-    datetime_end: string;
-
-    @IsOptional()
-    @IsString()
-    readonly status?: string;  //  "confirmed", "pending" (สามารถเป็น undefined ได้)
+    // @IsOptional()
+    // @IsString()
+    // readonly status?: string;  // สถานะการจอง เช่น "confirmed", "pending" (สามารถเป็น undefined ได้)
 }

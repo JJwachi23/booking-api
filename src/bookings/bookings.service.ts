@@ -14,7 +14,8 @@ export class BookingsService {
   ) { }
 
   create(createBookingDto: CreateBookingDto) {
-    return this._bookingsRepository.create(createBookingDto);
+    const booking = this._bookingsRepository.create(createBookingDto);
+    return this._bookingsRepository.save(booking);
   }
 
   findAll() {
