@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsString, IsDateString } from 'class-validator';
+import { IsNotEmpty, IsString, IsDateString, IsOptional } from 'class-validator';
 
 export class CreateBookingDto {
     @IsNotEmpty()
@@ -20,4 +20,8 @@ export class CreateBookingDto {
     @IsNotEmpty()
     @IsDateString()
     datetime_end: string;
+
+    @IsOptional()
+    @IsString()
+    readonly status?: string;  //  "confirmed", "pending" (สามารถเป็น undefined ได้)
 }
