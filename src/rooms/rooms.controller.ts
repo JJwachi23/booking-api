@@ -12,6 +12,11 @@ export class RoomsController {
     return this.roomsService.create(createRoomDto);
   }
 
+  @Get('room-numbers')
+  async getAllRoomNumbers() {
+    return await this.roomsService.getAllRoomNumbers();
+  }
+
   @Get()
   findAll() {
     return this.roomsService.findAll();
@@ -31,4 +36,5 @@ export class RoomsController {
   remove(@Param('id') id: string) {
     return this.roomsService.delete(+id);
   }
+
 }
