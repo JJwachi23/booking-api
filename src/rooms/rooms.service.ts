@@ -34,4 +34,12 @@ export class RoomsService {
   delete(id: number) {
     return this._roomsRepository.delete({ room_id: id });
   }
+
+  async getAllRoomNumbers() {
+    const data = await this._roomsRepository.query('SELECT room_number FROM rooms');
+    return {
+      data,
+      total: data.length
+    }
+  }
 }
